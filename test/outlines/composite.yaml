@@ -1,0 +1,56 @@
+points:
+  zones:
+    matrix: {}
+  mirror: 20
+outlines:
+  outline:
+    main:
+      what: rectangle
+      where: true
+      size: 20
+      bound: false
+    first_composite:
+      what: composite
+      where:
+        ref: matrix
+      segments:
+        - what: lines
+          points:
+            - shift: [0, 15]
+        - what: arc
+          points:
+            - shift: [8, 5]
+            - shift: [8, -5]
+        - what: lines
+          points:
+            - shift: [0, -15]
+      asym: both
+      operation: stack
+    second_composite:
+      what: composite
+      where:
+        ref: matrix
+        shift: [5, 5]
+      segments:
+        - what: lines
+          points:
+            - shift: [0, 7]
+        - what: bezier
+          points:
+            - shift: [7, 0]
+            - shift: [3, 5]
+            - shift: [5, 0]
+        - what: bezier
+          points:
+            - shift: [5, 0]
+            - shift: [3, -5]
+            - shift: [7, 0]
+        - what: lines
+          points:
+            - shift: [0, -7]
+        - what: arc
+          points:
+            - shift: [-15, 5]
+            - shift: [-15, -5]
+      operation: stack
+
